@@ -13,9 +13,6 @@ import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import axios from 'axios';
-import API from '../../utils/API';
-
 
 const styles = theme => ({
   appBar: {
@@ -68,46 +65,22 @@ const styles = theme => ({
 
 class Album extends React.Component {
   state = {
-    cards: []
+    cards: [
+      {
+        title: "Knee",
+        image: 'https://2we6uxuzjdn221pb11ao66sy-wpengine.netdna-ssl.com/wp-content/uploads/knees.jpg',
+        description: "These are your knees"
+      },
+      {
+        title: "Grapes",
+        image: 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Wine_grapes03.jpg',
+        description: "And these are your grapes"
+      }
+    ]
 
   };
-
-
   componentDidMount() {
-
-    axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=599a090fac7d4698901471c3edff281c')
-      .then(res => {
-
-        var news = [];
-
-        for (var i = 0; i < 20; i++) {
-          var obj = {
-
-            image: res.data.articles[i].urlToImage,
-            title: res.data.articles[i].url,
-            description: res.data.articles[i].description,
-            url: res.data.articles[i].url
-          };
-
-          news.push(obj)
-        }
-        this.setState({ cards: news });
-      })
-  }
-
-  //Take data to API layer to go to backend to be saved/loaded
-  view = (url, title, description, image) => {
-    var data =
-    {
-      url: url,
-      title: title,
-      description: description,
-      image: image
-    };
-    API.saveArticle(data).then(savedArticle =>{
-      console.log(savedArticle)
-    })
-    .catch()
+    
   }
 
 
@@ -171,10 +144,8 @@ class Album extends React.Component {
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
-                        Save
-                        {/* CURLY BOIZ
-                        THIS IS THE FUNCTION TO CALL TO VIEW */}
+                      <Button size="small" color="primary">
+                        View
                     </Button>
                       <Button size="small" color="primary">
                         Edit
@@ -197,8 +168,6 @@ class Album extends React.Component {
         </footer>
         {/* End footer */}
       </React.Fragment>
-
-      
     );
   }
 }

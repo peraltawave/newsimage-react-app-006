@@ -110,6 +110,7 @@ class Books extends Component {
               </FormBtn>
             </form>
           </Col>
+          {/*  THIS SECTION DISPLAYS THE LIST OF BOOKS OR PICS THAT HAVE BEEN INPUT BY THE FORM!! */}
           <Col size="md-6 sm-12">
             <Jumbotron>
               <h2>I have entered these..</h2>

@@ -6,6 +6,7 @@ import Album from "./pages/Album";
 import Home from "./pages/Home";
 import RecipeReviewCard from "./pages/Card";
 import NoMatch from "./pages/NoMatch";
+import Saved from "./pages/Saved";
 
 
 import Nav from "./components/Nav";
@@ -20,7 +21,8 @@ const App = () => (
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
         <Route exact path="/album" component={Album} />
-        <Route exact path="/card" component={RecipeReviewCard} />
+        <Route exact path="/saved" component={Saved} />
+
         <Route component={NoMatch} />
       </Switch>
     </div>

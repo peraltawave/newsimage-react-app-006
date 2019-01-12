@@ -6,8 +6,22 @@ const Nav = () => (
     <a className="navbar-brand" href="/">
       newsImage React App v 0.6
     </a>
-    <Button variant="contained" color="primary">
-      Sample Button
+    <a className="navbar-brand" href="/">
+     Home
+    </a> 
+    <a className="navbar-brand" href="/books">
+      Book List
+    </a>
+    <a className="navbar-brand" href="/album">
+      Album
+    </a>
+
+    <a className="navbar-brand" href="/saved">
+      Saved
+    </a>
+
+    <Button variant="contained" color="secondary" href="http://localhost:3001/api/articles">
+      API
     </Button>
   </nav>
 );
