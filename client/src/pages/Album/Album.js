@@ -128,7 +128,7 @@ class Album extends React.Component {
           <div className={this.props.classes.heroUnit}>
             <div className={this.props.classes.heroContent}>
               <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                Album layout
+                All Articles  
             </Typography>
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
                 Something short and leading about the collection below—its contents, the creator, etc.
