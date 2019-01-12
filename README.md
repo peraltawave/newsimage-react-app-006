@@ -1,7 +1,7 @@
 
 # **Project 3 Outline**
 ## **newsimage-react-app**
-> University of Arizona Coding Bootcamp / Fall 2018
+> University of Arizona Coding Bootcamp / Spring 2019
 
 ### **PROJECT SUMMARY**
 > Our app is based on two principles:  
