@@ -1,8 +1,16 @@
+/* 
+
+this file controls the list on this route: /saved
+
+*/
 .bookThumb {
-  height: 75px;
-  width: 75px;
+  height: auto;
+  width: 100px;
   margin: 10px;
 }
+
+
+
 
 .synopsisBox {
     width: 100px;

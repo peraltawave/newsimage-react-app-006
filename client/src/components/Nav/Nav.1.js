@@ -9,14 +9,18 @@ const Nav = () => (
     <a className="navbar-brand" href="/">
      Home
     </a> 
+    <a className="navbar-brand" href="/books">
+      Book List
+    </a>
     <a className="navbar-brand" href="/album">
       Articles
     </a>
+
     <a className="navbar-brand" href="/saved">
       Saved
     </a>
 
-    <Button variant="contained" color="primary" href="http://localhost:3001/api/articles">
+    <Button variant="contained" color="secondary" href="http://localhost:3001/api/articles">
       API
     </Button>
   </nav>
