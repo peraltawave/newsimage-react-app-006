@@ -49,6 +49,11 @@ npm install @material-ui/core
 
 // with yarn
 yarn add @material-ui/core
+
+```
+#### ***classnames***
+```
+yarn add classnames
 ```
 
 #### ***Roboto Font***
