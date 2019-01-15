@@ -4,6 +4,9 @@ import classNames from 'classnames';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
+import Save from '@material-ui/icons/Save';
+import Visibility from '@material-ui/icons/Visibility';
+
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -136,8 +139,8 @@ class Album extends React.Component {
               <div className={this.props.classes.heroButtons}>
                 <Grid container spacing={16} justify="center">
                   <Grid item>
-                    <Button variant="contained" color="primary">
-                      more apps
+                    <Button variant="contained" color="primary" href="/saved">
+                      my saved articles
                   </Button>
                   </Grid>
                   <Grid item>
@@ -170,12 +173,15 @@ class Album extends React.Component {
                     </CardContent>
                     <CardActions>
                       <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
-                        Save
+                        
+                        <Save className={this.props.classes.icon} />
+
                         {/* CURLY BOIZ
                         THIS IS THE FUNCTION TO CALL TO SAVE - BUT WE CALL IT */}
                     </Button>
                       <Button size="small" color="primary" href={card.title} target="_blank">
-                        view
+                      <Visibility className={this.props.classes.icon} />
+
                     </Button>
                     </CardActions>
                   </Card>

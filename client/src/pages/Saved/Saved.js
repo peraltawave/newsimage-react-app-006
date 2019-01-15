@@ -13,7 +13,6 @@ import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import axios from 'axios';
 import API from '../../utils/API';
 import { Col, Row, Container } from "../../components/Grid";
 import DeleteBtn from "../../components/DeleteBtn";
@@ -90,24 +89,6 @@ class Album extends React.Component {
     componentDidMount() {
         this.loadArticles();
 
-        // axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=599a090fac7d4698901471c3edff281c')
-        //   .then(res => {
-
-        //     var news = [];
-
-        //     for (var i = 0; i < 20; i++) {
-        //       var obj = {
-
-        //         image: res.data.articles[i].urlToImage,
-        //         title: res.data.articles[i].url,
-        //         description: res.data.articles[i].description,
-        //         url: res.data.articles[i].url
-        //       };
-
-        //       news.push(obj)
-        //     }
-        //     this.setState({ cards: news });
-        //   })
     }
 
 
@@ -118,20 +99,7 @@ class Album extends React.Component {
             .catch(err => console.log(err));
     };
 
-    //Take data to API layer to go to backend to be saved/loaded
-    //   view = (url, title, description, image) => {
-    //     var data =
-    //     {
-    //       url: url,
-    //       title: title,
-    //       description: description,
-    //       image: image
-    //     };
-    //     API.saveArticle(data).then(savedArticle => {
-    //       console.log(savedArticle)
-    //     })
-    //       .catch()
-    //   }
+
 
 
     render() {
@@ -152,22 +120,22 @@ class Album extends React.Component {
                         <div className={this.props.classes.heroContent}>
                             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                                 Saved Articles
-            </Typography>
+                            </Typography>
                             <Typography variant="h6" align="center" color="textSecondary" paragraph>
                                 Below is a list of your saved articles
-            </Typography>
+                            </Typography>
                             <div className={this.props.classes.heroButtons}>
                                 <Grid container spacing={16} justify="center">
-                                    {/* <Grid item>
-                                        <Button variant="contained" color="primary">
-                                            Main call to action
-                  </Button>
+                                     <Grid item>
+                                        <Button variant="contained" color="primary" href="/album">
+                                            back to articles
+                                        </Button>
                                     </Grid>
                                     <Grid item>
                                         <Button variant="outlined" color="primary">
                                             Secondary action
-                  </Button>
-                                    </Grid> */}
+                                        </Button>
+                                    </Grid> 
                                 </Grid>
                             </div>
                         </div>
@@ -193,7 +161,8 @@ class Album extends React.Component {
                                         </CardContent>
                                         <CardActions>
                                             <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
-                                                Save
+                                           
+Save
                         {/* CURLY BOIZ
                         THIS IS THE FUNCTION TO CALL TO VIEW */}
                                             </Button>
