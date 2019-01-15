@@ -119,7 +119,7 @@ class Album extends React.Component {
           <Toolbar>
             <CameraIcon className={this.props.classes.icon} />
             <Typography variant="h6" color="inherit" noWrap>
-              Album layout
+              newsImage Articles
           </Typography>
           </Toolbar>
         </AppBar>
@@ -128,23 +128,21 @@ class Album extends React.Component {
           <div className={this.props.classes.heroUnit}>
             <div className={this.props.classes.heroContent}>
               <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                All Articles  
+                newsImage  
             </Typography>
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
-                Something short and leading about the collection below—its contents, the creator, etc.
-                Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-                entirely.
+                Below is a collection of current news articles represented only by it's associated image. You can choose to visit the news article or save it for later.
             </Typography>
               <div className={this.props.classes.heroButtons}>
                 <Grid container spacing={16} justify="center">
                   <Grid item>
                     <Button variant="contained" color="primary">
-                      Main call to action
+                      more apps
                   </Button>
                   </Grid>
                   <Grid item>
                     <Button variant="outlined" color="primary">
-                      Secondary action
+                      meet the team
                   </Button>
                   </Grid>
                 </Grid>
@@ -164,20 +162,20 @@ class Album extends React.Component {
                     />
                     <CardContent className={this.props.classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
-                        {card.title}
+                        {/*card.title*/}
                       </Typography>
                       <Typography>
-                        {card.description}
+                        {/* card.description */ } 
                       </Typography>
                     </CardContent>
                     <CardActions>
                       <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
                         Save
                         {/* CURLY BOIZ
-                        THIS IS THE FUNCTION TO CALL TO VIEW */}
+                        THIS IS THE FUNCTION TO CALL TO SAVE - BUT WE CALL IT */}
                     </Button>
-                      <Button size="small" color="primary">
-                        Edit
+                      <Button size="small" color="primary" href={card.title} target="_blank">
+                        view
                     </Button>
                     </CardActions>
                   </Card>
@@ -186,13 +184,15 @@ class Album extends React.Component {
             </Grid>
           </div>
         </main>
+
+        
         {/* Footer */}
         <footer className={this.props.classes.footer}>
           <Typography variant="h6" align="center" gutterBottom>
-            Footer
+            newsImage&trade;
         </Typography>
           <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-            Something here to give the footer a purpose!
+            a picture is worth a thousand words
         </Typography>
         </footer>
         {/* End footer */}

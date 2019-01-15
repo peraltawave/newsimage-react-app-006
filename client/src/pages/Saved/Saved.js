@@ -20,7 +20,7 @@ import DeleteBtn from "../../components/DeleteBtn";
 import { Link } from "react-router-dom";
 import Jumbotron from "../../components/Jumbotron";
 import { List, ListItem } from "../../components/List";
-
+import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 
 
 
@@ -81,14 +81,14 @@ class Album extends React.Component {
     };
 
 
-    loadArticles(){
+    loadArticles() {
         API.getArticles().then(res => {
             this.setState({ articles: res.data });
         })
     }
 
     componentDidMount() {
-       this.loadArticles();
+        this.loadArticles();
 
         // axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=599a090fac7d4698901471c3edff281c')
         //   .then(res => {
@@ -151,16 +151,14 @@ class Album extends React.Component {
                     <div className={this.props.classes.heroUnit}>
                         <div className={this.props.classes.heroContent}>
                             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                                Album layout
+                                Saved Articles
             </Typography>
                             <Typography variant="h6" align="center" color="textSecondary" paragraph>
-                                Something short and leading about the collection below—its contents, the creator, etc.
-                                Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-                                entirely.
+                                Below is a list of your saved articles
             </Typography>
                             <div className={this.props.classes.heroButtons}>
                                 <Grid container spacing={16} justify="center">
-                                    <Grid item>
+                                    {/* <Grid item>
                                         <Button variant="contained" color="primary">
                                             Main call to action
                   </Button>
@@ -169,7 +167,7 @@ class Album extends React.Component {
                                         <Button variant="outlined" color="primary">
                                             Secondary action
                   </Button>
-                                    </Grid>
+                                    </Grid> */}
                                 </Grid>
                             </div>
                         </div>
@@ -223,7 +221,7 @@ class Album extends React.Component {
                                         <strong>{/*this is what is in the header */}
 
                                             <img src={article.image} className="bookThumb" />
-                                            {article.title} by {article.url}
+                                            {article.url}
                                         </strong>
                                     </Link>
                                     <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
@@ -238,10 +236,10 @@ class Album extends React.Component {
                 {/* Footer */}
                 <footer className={this.props.classes.footer}>
                     <Typography variant="h6" align="center" gutterBottom>
-                        Footer
+                        newsImage&trade;
         </Typography>
                     <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-                        Something here to give the footer a purpose!
+                        a picture is worth a thousand words
         </Typography>
                 </footer>
                 {/* End footer */}

@@ -4,7 +4,6 @@ import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import Album from "./pages/Album";
 import Home from "./pages/Home";
-import RecipeReviewCard from "./pages/Card";
 import NoMatch from "./pages/NoMatch";
 import Saved from "./pages/Saved";
 
