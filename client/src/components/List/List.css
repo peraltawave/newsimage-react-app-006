@@ -1,34 +1,36 @@
-.list-overflow-container {
-  /* max-height: 545px; */
-  width: 940px;
-  border: 1px #DDDDDD solid;
-  border-radius: 4px;
-  overflow-y: scroll;
-  overflow-x: hidden;
+.container {
+    /* max-height: 545px; */
+    width: 940px;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    /* overflow-y: scroll;
+    overflow-x: hidden; */
 }
 
-.list-overflow-container ul {
-  margin: 0;
+.container ul {
+    margin: 0;
 }
 
-.list-overflow-container li {
-  border-radius: 0px;
-  border-left: none;
-  border-right: none;
+.container li {
+    border-radius: 0px;
+    border-left: none;
+    border-right: none;
 }
 
-.list-overflow-container li * {
-  cursor: pointer;
+.container li * {
+    cursor: pointer;
 }
 
-.list-overflow-container li a {
-  /* color: #2A878C; */
+.container li a {
+    /* color: #2A878C; */
+    color: #333333;
 }
 
-.list-overflow-container li:first-child {
-  border-top: none;
+
+.container li:first-child {
+    border-top: none;
 }
 
-.list-overflow-container li:last-child {
-  border-bottom: none;
+.container li:last-child {
+    border-bottom: none;
 }

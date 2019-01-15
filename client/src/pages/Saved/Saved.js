@@ -38,7 +38,7 @@ const styles = theme => ({
     heroContent: {
         maxWidth: 600,
         margin: '0 auto',
-        padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
+        padding: `${theme.spacing.unit * 1}px 0 ${theme.spacing.unit * 6}px`,
     },
     heroButtons: {
         marginTop: theme.spacing.unit * 4,
@@ -54,7 +54,7 @@ const styles = theme => ({
         },
     },
     cardGrid: {
-        padding: `${theme.spacing.unit * 8}px 0`,
+        padding: `${theme.spacing.unit * 2}px 0`,
     },
     card: {
         height: '100%',
@@ -164,7 +164,7 @@ class Album extends React.Component {
                                         <CardActions>
                                             <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
                                            
-Save
+                                                Save
                         {/* CURLY BOIZ
                         THIS IS THE FUNCTION TO CALL TO VIEW */}
                                             </Button>
@@ -188,12 +188,13 @@ Save
                         <List>
                             {this.state.articles.map(article => (
                                 <ListItem key={article._id}>
-                                    <Link to={"/album/" + article._id}>
-                                        <strong>{/*this is what is in the header */}
+                                    <Link to={article.url}>
+                                        {/*this is what is in the header */}
 
                                             <img src={article.image} className="bookThumb" />
-                                            {article.url}
-                                        </strong>
+                                            {article.description}
+                                            {/* {article.description}{article.url} */}
+                                        
                                     </Link>
                                     <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
                                 </ListItem>
@@ -208,10 +209,10 @@ Save
                 <footer className={this.props.classes.footer}>
                     <Typography variant="h6" align="center" gutterBottom>
                         newsImage&trade;
-        </Typography>
+                    </Typography>
                     <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
                         a picture is worth a thousand words
-        </Typography>
+                    </Typography>
                 </footer>
                 {/* End footer */}
             </React.Fragment>
