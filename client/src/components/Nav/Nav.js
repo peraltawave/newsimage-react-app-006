@@ -16,9 +16,9 @@ const apiButton = {
 
 const Nav = () => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
-    <a className="navbar-brand" >
-      newsImage React App v 0.6
-    </a>
+    <span className="navbar-brand2" >
+      newsImage 
+    </span>
     <a className="navbar-brand" href="/">
      Home
     </a> 

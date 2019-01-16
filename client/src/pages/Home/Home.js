@@ -68,7 +68,7 @@ class Books extends Component {
     return (
       <Container fluid>
         <Jumbotron>
-          <h1>newsImage</h1>
+          <h1 className="newsImage-logo"> newsImage</h1>
         </Jumbotron>
         <Link to={"/books/"}>
                       Go
