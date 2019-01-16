@@ -40,7 +40,8 @@ const styles = theme => ({
         padding: `${theme.spacing.unit * 6}px 0 ${theme.spacing.unit * 6}px`,
     },
     heroButtons: {
-        marginTop: theme.spacing.unit * 4,
+        marginTop: theme.spacing.unit * 2,
+        marginBottom: theme.spacing.unit *4,
     },
     layout: {
         width: 'auto',
@@ -115,12 +116,12 @@ class Album extends React.Component {
             <React.Fragment>
                 <CssBaseline />
                 <AppBar position="static" className={this.props.classes.appBar}>
-                    <Toolbar>
+                    {/* <Toolbar>
                         <CameraIcon className={this.props.classes.icon} />
                         <Typography variant="h6" color="inherit" noWrap>
                             Saved Articles
           </Typography>
-                    </Toolbar>
+                    </Toolbar> */}
                 </AppBar>
                 <main>
                     {/* Hero unit */}
@@ -132,12 +133,13 @@ class Album extends React.Component {
                             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                                 Saved Articles
                             </Typography>
-                            <Typography variant="h6" align="center" color="textSecondary" paragraph>
+                            {/* <Typography variant="h6" align="center" color="textSecondary" paragraph>
                                 Below is a list of your saved articles
-                            </Typography>
+                            </Typography> */}
 
                             {/* this below are the two call to action buttons */}
 
+<<<<<<< HEAD
                             <div className={this.props.classes.heroButtons}>
                                 <Grid container spacing={16} justify="center">
                                      <Grid item>
@@ -150,6 +152,9 @@ class Album extends React.Component {
                                     </Grid> 
                                 </Grid>
                             </div>
+=======
+                            
+>>>>>>> 13e09051ac3a2d3ebf594987af309d1817f6d7da
                         </div>
                     </div>
                     {/* End hero unit */}
@@ -210,14 +215,28 @@ class Album extends React.Component {
                                         /* this below is the else statement - what to show if we have saved no articles */
                                         <h3>No Results to Display</h3>
                         )}
+                    <div className={this.props.classes.heroButtons}>
+                                <Grid container spacing={16} justify="center">
+                                     <Grid item>
+                                        <Button variant="contained" color="primary" href="/album">
+                                        <KeyboardBackspace fontSize="small" /> back to articles
+                                        </Button>
+                                    </Grid>
+                                    {/* <Grid item>
+                                        <Button variant="outlined" color="primary">
+                                            Secondary action
+                                        </Button>
+                                    </Grid>  */}
+                                </Grid>
+                            </div>
                 </div>
 
                 {/* Footer */}
                 <footer className={this.props.classes.footer}>
-                    <Typography variant="h6" align="center" gutterBottom>
+                    <Typography className="newsImage-footer" align="center">
                         newsImage&trade;
                     </Typography>
-                    <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+                    <Typography className="tagLine-footer" align="center" >
                         a picture is worth a thousand words
                     </Typography>
                 </footer>
