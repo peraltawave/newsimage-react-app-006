@@ -132,9 +132,9 @@ class Album extends React.Component {
                             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                                 Saved Articles
                             </Typography>
-                            <Typography variant="h6" align="center" color="textSecondary" paragraph>
+                            {/* <Typography variant="h6" align="center" color="textSecondary" paragraph>
                                 Below is a list of your saved articles
-                            </Typography>
+                            </Typography> */}
 
                             {/* this below are the two call to action buttons */}
 
