@@ -146,9 +146,7 @@ class Album extends React.Component {
                                         </Button>
                                     </Grid>
                                     <Grid item>
-                                        <Button variant="outlined" color="primary">
-                                            Secondary action
-                                        </Button>
+                                        
                                     </Grid> 
                                 </Grid>
                             </div>
