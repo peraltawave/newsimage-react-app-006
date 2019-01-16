@@ -15,7 +15,7 @@ const apiButton = {
 
 
 const Nav = () => (
-  <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
     <a className="navbar-brand" >
       newsImage React App v 0.6
     </a>
