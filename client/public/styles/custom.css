@@ -1,3 +1,29 @@
-.navbar-brand{
-    color: #ffcc00;
+.navbar-brand2{
+    color: #4400ff;
+    margin-right: 25px;
+    font-size: 15px;
+    font-style: italic;
+    letter-spacing: -1px;
+    }
+
+.newsImage-logo{
+    color: #4400ff;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 50px;
+    letter-spacing: -2px;
+}
+
+.newsImage-footer{
+    color: #4400ff;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    letter-spacing: -2px;
+}
+
+.tagLine-footer{
+    color: #a3a2a7;
+    font-size: 12px;
+    
 }

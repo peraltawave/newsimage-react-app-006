@@ -36,7 +36,8 @@ const styles = theme => ({
     padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
   },
   heroButtons: {
-    marginTop: theme.spacing.unit * 4,
+    marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit *4,
   },
   layout: {
     width: 'auto',
@@ -118,38 +119,25 @@ class Album extends React.Component {
     return (
       <React.Fragment>
         <CssBaseline />
-        <AppBar position="static" className={this.props.classes.appBar}>
+        {/* <AppBar position="static" className={this.props.classes.appBar}>
           <Toolbar>
             <CameraIcon className={this.props.classes.icon} />
             <Typography variant="h6" color="inherit" noWrap>
               newsImage Articles
           </Typography>
           </Toolbar>
-        </AppBar>
+        </AppBar> */}
         <main>
           {/* Hero unit */}
           <div className={this.props.classes.heroUnit}>
             <div className={this.props.classes.heroContent}>
-              <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+              <Typography className="newsImage-logo" align="center"> 
                 newsImage  
             </Typography>
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
                 Below is a collection of current news articles represented only by it's associated image. You can choose to visit the news article or save it for later.
             </Typography>
-              <div className={this.props.classes.heroButtons}>
-                <Grid container spacing={16} justify="center">
-                  <Grid item>
-                    <Button variant="contained" color="primary" href="/saved">
-                      my saved articles
-                  </Button>
-                  </Grid>
-                  <Grid item>
-                    <Button variant="outlined" color="primary">
-                      meet the team
-                  </Button>
-                  </Grid>
-                </Grid>
-              </div>
+              
             </div>
           </div>
           <div className={classNames(this.props.classes.layout, this.props.classes.cardGrid)}>
@@ -189,15 +177,29 @@ class Album extends React.Component {
               ))}
             </Grid>
           </div>
+          <div className={this.props.classes.heroButtons}>
+               <Grid container spacing={16} justify="center">
+                 <Grid item>
+                   <Button variant="contained" color="primary" href="/saved">
+                     my saved articles
+                 </Button>
+                 </Grid>
+                 <Grid item>
+                   <Button variant="outlined" color="primary">
+                     meet the team
+                 </Button>
+                 </Grid>
+               </Grid>
+             </div>
         </main>
 
         
         {/* Footer */}
         <footer className={this.props.classes.footer}>
-          <Typography variant="h6" align="center" gutterBottom>
+        <Typography className="newsImage-footer" align="center">
             newsImage&trade;
         </Typography>
-          <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+          <Typography className="tagLine-footer" align="center" >
             a picture is worth a thousand words
         </Typography>
         </footer>
