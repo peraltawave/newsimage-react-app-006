@@ -4,7 +4,7 @@ import Settings from '@material-ui/icons/Settings';
 
 
 
-const apiIcon = {
+const apiButton = {
   margin: 0,
   top: 12,
   right: 20,
@@ -29,14 +29,9 @@ const Nav = () => (
       Saved
     </a>
 
-    <Button  style={apiIcon} variant="contained" size="small" color="primary" href="http://localhost:3001/api/articles">
+    <Button  style={apiButton} variant="contained" size="small" color="primary" href="http://localhost:3001/api/articles">
       API&nbsp; <Settings fontSize="small" />
     </Button>
-
-
-    
-
-
   </nav>
 );
 

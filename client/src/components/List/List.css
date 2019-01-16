@@ -23,7 +23,12 @@
 
 .container li a {
     /* color: #2A878C; */
-    color: #333333;
+    color: grey;
+    float: left;
+    width: 90%;
+    font-size: .90rem;
+    margin-top: 5px;
+
 }
 
 

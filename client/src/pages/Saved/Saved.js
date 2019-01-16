@@ -6,6 +6,8 @@ import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import KeyboardBackspace from '@material-ui/icons/KeyboardBackspace';
 
+
+
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -72,7 +74,8 @@ const styles = theme => ({
         height: 'auto',
         width: '100px',
         margin: '10px',
-        float: 'left'
+        float: 'left',
+        marginTop: '-1px',
     },
 });
 
@@ -194,13 +197,14 @@ class Album extends React.Component {
                         <List>
                             {this.state.articles.map(article => (
                                 <ListItem key={article._id}>
+                                <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
                                     <Link to={article.url}>
                                         {/* this below is the display of the image and description */}
                                             <img src={article.image} className={this.props.classes.bookThumb} /> {article.description}
                                             {/* {article.description}{article.url} */}
                                     </Link>
                                         {/* this below is the display of the trash can delete icon - which is set in the DeleteBtn component*/}
-                                        <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
+                                        
                                 </ListItem>
                             ))}
                         </List>
