@@ -4,6 +4,10 @@ import classNames from 'classnames';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
+import KeyboardBackspace from '@material-ui/icons/KeyboardBackspace';
+
+
+
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -14,12 +18,9 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import API from '../../utils/API';
-import { Col, Row, Container } from "../../components/Grid";
 import DeleteBtn from "../../components/DeleteBtn";
 import { Link } from "react-router-dom";
-import Jumbotron from "../../components/Jumbotron";
 import { List, ListItem } from "../../components/List";
-import { AccessAlarm, ThreeDRotation } from '@material-ui/icons';
 
 
 
@@ -36,7 +37,7 @@ const styles = theme => ({
     heroContent: {
         maxWidth: 600,
         margin: '0 auto',
-        padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
+        padding: `${theme.spacing.unit * 6}px 0 ${theme.spacing.unit * 6}px`,
     },
     heroButtons: {
         marginTop: theme.spacing.unit * 4,
@@ -52,7 +53,7 @@ const styles = theme => ({
         },
     },
     cardGrid: {
-        padding: `${theme.spacing.unit * 8}px 0`,
+        padding: `${theme.spacing.unit * 2}px 0`,
     },
     card: {
         height: '100%',
@@ -68,6 +69,13 @@ const styles = theme => ({
     footer: {
         backgroundColor: theme.palette.background.paper,
         padding: theme.spacing.unit * 6,
+    },
+    bookThumb: {
+        height: 'auto',
+        width: '100px',
+        margin: '10px',
+        float: 'left',
+        marginTop: '-1px',
     },
 });
 
@@ -117,18 +125,24 @@ class Album extends React.Component {
                 <main>
                     {/* Hero unit */}
                     <div className={this.props.classes.heroUnit}>
-                        <div className={this.props.classes.heroContent}>
+                    
+                            {/* this below is the main text header */}
+
+                            <div className={this.props.classes.heroContent}>
                             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                                 Saved Articles
                             </Typography>
                             <Typography variant="h6" align="center" color="textSecondary" paragraph>
                                 Below is a list of your saved articles
                             </Typography>
+
+                            {/* this below are the two call to action buttons */}
+
                             <div className={this.props.classes.heroButtons}>
                                 <Grid container spacing={16} justify="center">
                                      <Grid item>
                                         <Button variant="contained" color="primary" href="/album">
-                                            back to articles
+                                        <KeyboardBackspace fontSize="small" /> back to articles
                                         </Button>
                                     </Grid>
                                     <Grid item>
@@ -140,8 +154,11 @@ class Album extends React.Component {
                             </div>
                         </div>
                     </div>
+                    {/* End hero unit */}
+
+                    {/* this below is the default grid that is used only on the album page */}
                     <div className={classNames(this.props.classes.layout, this.props.classes.cardGrid)}>
-                        {/* End hero unit */}
+
                         <Grid container spacing={40}>
                             {this.state.cards.map(card => (
                                 <Grid item key={card} sm={6} md={4} lg={3}>
@@ -151,7 +168,7 @@ class Album extends React.Component {
                                             image={card.image} // eslint-disable-line max-len
                                             title={card.title}
                                         />
-                                        <CardContent className={this.props.classes.cardContent}>
+                                        <CardContent className={this.props.classes.cardMedia}>
                                             <Typography gutterBottom variant="h5" component="h2">
                                                 {card.title}
                                             </Typography>
@@ -160,15 +177,13 @@ class Album extends React.Component {
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
+                                            {/* onclick FUNCTION that saves an article to the /saved route */}
                                             <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
-                                           
-Save
-                        {/* CURLY BOIZ
-                        THIS IS THE FUNCTION TO CALL TO VIEW */}
+                                                Save
                                             </Button>
                                             <Button size="small" color="primary">
                                                 Edit
-                    </Button>
+                                            </Button>
                                         </CardActions>
                                     </Card>
                                 </Grid>
@@ -177,28 +192,25 @@ Save
                     </div>
                 </main>
 
-                {/* THIS IS COPIED FROM books.js - put into the render */}
                 <div>
-                    {/* <Jumbotron>
-            <h2>I have entered these..</h2>
-          </Jumbotron> */}
                     {this.state.articles.length ? (
                         <List>
                             {this.state.articles.map(article => (
                                 <ListItem key={article._id}>
-                                    <Link to={"/album/" + article._id}>
-                                        <strong>{/*this is what is in the header */}
-
-                                            <img src={article.image} className="bookThumb" />
-                                            {article.url}
-                                        </strong>
+                                <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
+                                    <Link to={article.url}>
+                                        {/* this below is the display of the image and description */}
+                                            <img src={article.image} className={this.props.classes.bookThumb} /> {article.description}
+                                            {/* {article.description}{article.url} */}
                                     </Link>
-                                    <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
+                                        {/* this below is the display of the trash can delete icon - which is set in the DeleteBtn component*/}
+                                        
                                 </ListItem>
                             ))}
                         </List>
                     ) : (
-                            <h3>No Results to Display</h3>
+                                        /* this below is the else statement - what to show if we have saved no articles */
+                                        <h3>No Results to Display</h3>
                         )}
                 </div>
 
@@ -206,10 +218,10 @@ Save
                 <footer className={this.props.classes.footer}>
                     <Typography variant="h6" align="center" gutterBottom>
                         newsImage&trade;
-        </Typography>
+                    </Typography>
                     <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
                         a picture is worth a thousand words
-        </Typography>
+                    </Typography>
                 </footer>
                 {/* End footer */}
             </React.Fragment>
