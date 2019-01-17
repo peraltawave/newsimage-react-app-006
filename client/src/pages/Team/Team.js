@@ -84,7 +84,7 @@ class Album extends React.Component {
 
         var news = [];
 
-        for (var i = 0; i < 20; i++) {
+        for (var i = 0; i < 4; i++) {
           var obj = {
 
             image: res.data.articles[i].urlToImage,
@@ -123,16 +123,17 @@ class Album extends React.Component {
           <Toolbar>
             <CameraIcon className={this.props.classes.icon} />
             <Typography variant="h6" color="inherit" noWrap>
-              Raw Articles
+              Meet the Team
           </Typography>
           </Toolbar>
         </AppBar>
+
         <main>
           {/* Hero unit */}
           <div className={this.props.classes.heroUnit}>
             <div className={this.props.classes.heroContent}>
               <Typography className="newsImage-logo" align="center"> 
-                newsImage  
+                newsImage Team  
             </Typography>
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
                 Below is a collection of current news articles represented only by it's associated image. You can choose to visit the news article or save it for later.
