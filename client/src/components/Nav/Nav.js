@@ -28,6 +28,8 @@ const Nav = () => (
     <a className="navbar-brand" href="/saved">
       Saved
     </a>
+    <a className="navbar-brand" href="/team">
+    Team</a>
 
     <Button  style={apiButton} variant="contained" size="small" color="primary" href="http://localhost:3001/api/articles">
       API&nbsp; <Settings fontSize="small" />

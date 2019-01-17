@@ -26,51 +26,53 @@ import { List, ListItem } from "../../components/List";
 
 const styles = theme => ({
     appBar: {
-        position: 'relative',
+      position: 'relative',
     },
     icon: {
-        marginRight: theme.spacing.unit * 2,
+      marginRight: theme.spacing.unit * 2,
     },
     heroUnit: {
-        backgroundColor: theme.palette.background.paper,
+      backgroundColor: theme.palette.background.paper,
     },
     heroContent: {
-        maxWidth: 600,
-        margin: '0 auto',
-        padding: `${theme.spacing.unit * 6}px 0 ${theme.spacing.unit * 6}px`,
+      maxWidth: 600,
+      margin: '0 auto',
+      padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
     },
     heroButtons: {
-        marginTop: theme.spacing.unit * 2,
-        marginBottom: theme.spacing.unit *4,
+      marginTop: theme.spacing.unit * 2,
+      marginBottom: theme.spacing.unit *4,
     },
     layout: {
-        width: 'auto',
-        marginLeft: theme.spacing.unit * 3,
-        marginRight: theme.spacing.unit * 3,
-        [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-            width: 1100,
-            marginLeft: 'auto',
-            marginRight: 'auto',
-        },
+      width: 'auto',
+      marginLeft: theme.spacing.unit * 3,
+      marginRight: theme.spacing.unit * 3,
+      [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
+        width: 1100,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      },
     },
     cardGrid: {
-        padding: `${theme.spacing.unit * 2}px 0`,
+      padding: `${theme.spacing.unit * 2}px 0`,
     },
     card: {
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
     },
     cardMedia: {
-        paddingTop: '56.25%', // 16:9
+      paddingTop: '56.25%', // 16:9
     },
     cardContent: {
-        flexGrow: 1,
+      flexGrow: 1,
     },
     footer: {
-        backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing.unit * 6,
+      backgroundColor: theme.palette.background.paper,
+      padding: theme.spacing.unit * 6,
     },
+
+  
     bookThumb: {
         height: 'auto',
         width: '100px',
@@ -116,31 +118,24 @@ class Album extends React.Component {
             <React.Fragment>
                 <CssBaseline />
                 <AppBar position="static" className={this.props.classes.appBar}>
-                    {/* <Toolbar>
-                        <CameraIcon className={this.props.classes.icon} />
-                        <Typography variant="h6" color="inherit" noWrap>
-                            Saved Articles
+          <Toolbar>
+            <CameraIcon className={this.props.classes.icon} />
+            <Typography variant="h6" color="inherit" noWrap>
+              Saved Articles
           </Typography>
-                    </Toolbar> */}
-                </AppBar>
+          </Toolbar>
+        </AppBar>
                 <main>
                     {/* Hero unit */}
                     <div className={this.props.classes.heroUnit}>
                     
                             {/* this below is the main text header */}
-
                             <div className={this.props.classes.heroContent}>
                             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                                 Saved Articles
                             </Typography>
-                            {/* <Typography variant="h6" align="center" color="textSecondary" paragraph>
-                                Below is a list of your saved articles
-                            </Typography> */}
-
-                            {/* this below are the two call to action buttons */}
-
                             
-                        </div>
+                            </div>
                     </div>
                     {/* End hero unit */}
 

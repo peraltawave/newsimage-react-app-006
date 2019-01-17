@@ -1,7 +1,9 @@
 .navbar-brand2{
     color: #4400ff;
     margin-right: 25px;
-    font-size: 15px;
+    font-weight: bold;
+
+    font-size: 24px;
     font-style: italic;
     letter-spacing: -1px;
     }
