@@ -8,6 +8,7 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import "../Books/Books.css";
 import "../Detail/Detail.css";
+import Typography from '@material-ui/core/Typography';
 
 
 class Books extends Component {
