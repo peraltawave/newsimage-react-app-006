@@ -157,7 +157,7 @@ class Album extends React.Component {
                         {/*card.title*/}
                       </Typography>
                       <Typography>
-                        {/* card.description */ } 
+                        {card.description} 
                       </Typography>
                     </CardContent>
                     <CardActions>

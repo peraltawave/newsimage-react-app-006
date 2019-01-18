@@ -1,6 +1,6 @@
 import React from 'react';
 import { Paper, withStyles, Grid, TextField, Button, FormControlLabel, Checkbox } from '@material-ui/core';
-import { Account_box, Lock } from '@material-ui/icons'
+import { AccountBox, Lock } from '@material-ui/icons'
 // import { Link } from "react-router-dom";
 const styles = theme => ({
     margin: {
@@ -19,7 +19,7 @@ class LoginTab extends React.Component {
                 <div className={classes.margin}>
                     <Grid container spacing={8} alignItems="flex-end">
                         <Grid item>
-                            <Account_box />
+                            <AccountBox />
                         </Grid>
                         <Grid item md={true} sm={true} xs={true}>
                             <TextField id="username" label="Username" type="email"  autoFocus required />
