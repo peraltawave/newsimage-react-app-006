@@ -80,10 +80,12 @@ const styles = theme => ({
 
 class Album extends React.Component {
   state = {
-    cards: []
+    cards: [],
+    friends
 
   };
 
+  
 
   componentDidMount() {
 
