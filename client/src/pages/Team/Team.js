@@ -94,7 +94,7 @@ class Album extends React.Component {
 
         var news = [];
 
-        for (var i = 0; i < 4; i++) {
+        for (var i = 0; i < 1; i++) {
           var obj = {
 
             image: res.data.articles[i].urlToImage,
@@ -143,25 +143,27 @@ class Album extends React.Component {
 
 
 
-<div className={classNames(this.props.classes.layout, this.props.classes.cardGrid)}>
+          <div className={classNames(this.props.classes.layout, this.props.classes.cardGrid)}>
             {/* End hero unit */}
             <Grid container spacing={40}>
-              {this.state.cards.map(card => (
-                <Grid item key={card} sm={6} md={4} lg={3}>
+              {this.state.friends.map(friend => (
+                <Grid item key={friend.id} sm={6} md={4} lg={3}>
                   <Card className={this.props.classes.card}>
                     <CardContent className={this.props.classes.cardContent}>
 
-                    {this.state.friends.map(friend => (
-                <FriendCard
-                  removeFriend={this.removeFriend}
-                  id={friend.id}
-                  key={friend.id}
-                  name={friend.name}
-                  image={friend.image}
-                  occupation={friend.occupation}
-                  location={friend.location}
-                />
-              ))}
+
+                      <CardMedia className={this.props.classes.cardMedia}
+                        image={friend.image}
+                        title={friend.name}
+                      />
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {friend.name}
+                      </Typography>
+                      <Typography>
+                      {friend.occupation}
+                      </Typography>
+
+
 
 
                     </CardContent>
