@@ -67,6 +67,7 @@ const styles = theme => ({
   },
   cardMedia: {
     paddingTop: '100%', // originally 56.25% 16:9
+
   },
   cardContent: {
     flexGrow: 1,
@@ -133,10 +134,8 @@ class Album extends React.Component {
                 newsImage Team
               </Typography>
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
-                The guys that brought you newsImage
-              </Typography>
-
-
+                Here are the guys who brought this to you. 
+            </Typography>
             </div>
           </div>
 
@@ -157,16 +156,19 @@ class Album extends React.Component {
                         title={friend.name}
                       />
                       <Typography gutterBottom variant="h5" component="h2">
+
                         {friend.name}
                       </Typography>
                       <Typography>
                       {friend.occupation}
+
                       </Typography>
 
 
 
 
                     </CardContent>
+
                   </Card>
                 </Grid>
               ))}
@@ -184,6 +186,7 @@ class Album extends React.Component {
               </Grid>
             </Grid>
           </div>
+
         </main>
 
 
