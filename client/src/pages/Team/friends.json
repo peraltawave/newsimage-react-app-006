@@ -2,28 +2,28 @@
   {
     "id": 1,
     "name": "Alex",
-    "image": "./teamImg/Alex_s.jpg",
+    "image": "teamImg/Alex_s.jpg",
     "occupation": "I'm a Canadian and I'm very sorry about that eh.",
     "location": "Canada"
   },
   {
     "id": 1,
     "name": "Derek",
-    "image": "./teamImg/Derek_s.jpg",
+    "image": "teamImg/Derek_s.jpg",
     "occupation": "I like hockey so much that I was made an honorary Canadian in a official ceremony.",
     "location": "Minnesota"
   },
   {
     "id": 1,
     "name": "Keith",
-    "image": "./teamImg/Keith_s.jpg",
+    "image": "teamImg/Keith_s.jpg",
     "occupation": "My beard is the source of my power.",
     "location": "Hollywood"
   },
   {
     "id": 1,
     "name": "Miguel",
-    "image": "./teamImg/Miguel_s.jpg",
+    "image": "teamImg/Miguel_s.jpg",
     "occupation": "I like long walks on the beach and doing your mom.",
     "location": "Your mom's house"
   }
