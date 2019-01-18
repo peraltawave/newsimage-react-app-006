@@ -19,8 +19,8 @@ import axios from 'axios';
 import API from '../../utils/API';
 
 
-import FriendCard from "./components/FriendCard";
-import Wrapper from "./components/Wrapper";
+import FriendCard from "../../components/FriendCard";
+import Wrapper from "../../components/Wrapper";
 import friends from "./friends.json";
 import "./Team.css";
 
