@@ -45,7 +45,7 @@ const styles = theme => ({
   },
   heroButtons: {
     marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 4,
+    marginBottom: theme.spacing.unit *4,
   },
   layout: {
     width: 'auto',
@@ -85,7 +85,7 @@ class Album extends React.Component {
 
   };
 
-
+  
 
   componentDidMount() {
 
@@ -129,12 +129,23 @@ class Album extends React.Component {
           {/* Hero unit */}
           <div className={this.props.classes.heroUnit}>
             <div className={this.props.classes.heroContent}>
-              <Typography className="newsImage-logo" align="center">
-                newsImage Team
-              </Typography>
+              <Typography className="newsImage-logo" align="center"> 
+                newsImage Team  
+            </Typography>
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
                 The guys that brought you newsImage
-              </Typography>
+            </Typography>
+            {this.state.friends.map(friend => (
+          <FriendCard
+            removeFriend={this.removeFriend}
+            id={friend.id}
+            key={friend.id}
+            name={friend.name}
+            image={friend.image}
+            occupation={friend.occupation}
+            location={friend.location}
+          />
+        ))}
 
 
             </div>
@@ -143,51 +154,28 @@ class Album extends React.Component {
 
 
 
-<div className={classNames(this.props.classes.layout, this.props.classes.cardGrid)}>
-            {/* End hero unit */}
-            <Grid container spacing={40}>
-              {this.state.cards.map(card => (
-                <Grid item key={card} sm={6} md={4} lg={3}>
-                  <Card className={this.props.classes.card}>
-                    <CardContent className={this.props.classes.cardContent}>
-
-                    {this.state.friends.map(friend => (
-                <FriendCard
-                  removeFriend={this.removeFriend}
-                  id={friend.id}
-                  key={friend.id}
-                  name={friend.name}
-                  image={friend.image}
-                  occupation={friend.occupation}
-                  location={friend.location}
-                />
-              ))}
 
 
-                    </CardContent>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </div>
+
+
 
 
 
           <div className={this.props.classes.heroButtons}>
-            <Grid container spacing={16} justify="center">
-              <Grid item>
-                <Button variant="contained" color="primary" href="/saved">
-                  my saved articles
+               <Grid container spacing={16} justify="center">
+                 <Grid item>
+                   <Button variant="contained" color="primary" href="/saved">
+                     my saved articles
                  </Button>
-              </Grid>
-            </Grid>
-          </div>
+                 </Grid>
+               </Grid>
+             </div>
         </main>
 
-
+        
         {/* Footer */}
         <footer className={this.props.classes.footer}>
-          <Typography className="newsImage-footer" align="center">
+        <Typography className="newsImage-footer" align="center">
             newsImage&trade;
         </Typography>
           <Typography className="tagLine-footer" align="center" >
@@ -197,7 +185,7 @@ class Album extends React.Component {
         {/* End footer */}
       </React.Fragment>
 
-
+      
     );
   }
 }
