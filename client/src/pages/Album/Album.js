@@ -58,7 +58,7 @@ const styles = theme => ({
     flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '100%', // 16:9
   },
   cardContent: {
     flexGrow: 1,
@@ -151,14 +151,14 @@ class Album extends React.Component {
                       image={card.image} // eslint-disable-line max-len
                       title={card.title}
                     />
-                    <CardContent className={this.props.classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2">
+                    {/* <CardContent className={this.props.classes.cardContent}>
+                      <Typography gutterBottom variant="h5" component="h2"> */}
                         {/*card.title*/}
-                      </Typography>
-                      <Typography>
+                      {/* </Typography>
+                      <Typography> */}
                         {/* card.description */ } 
-                      </Typography>
-                    </CardContent>
+                      {/* </Typography>
+                    </CardContent> */}
                     <CardActions>
                       <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
                         
@@ -167,7 +167,7 @@ class Album extends React.Component {
                         {/* CURLY BOIZ
                         THIS IS THE FUNCTION TO CALL TO SAVE - BUT WE CALL IT */}
                     </Button>
-                      <Button size="small" color="primary" href={card.title} target="_blank">
+                      <Button  className="view-icon" size="small" color="primary" href={card.title} target="_blank">
                       <Visibility className={this.props.classes.icon} />
 
                     </Button>
