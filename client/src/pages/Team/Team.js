@@ -1,12 +1,11 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
-import Save from '@material-ui/icons/Save';
+import { Save, CameraIcon } from '@material-ui/icons';
 import Visibility from '@material-ui/icons/Visibility';
-
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -18,6 +17,15 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import API from '../../utils/API';
+
+
+import FriendCard from "./components/FriendCard";
+import Wrapper from "./components/Wrapper";
+import friends from "./friends.json";
+import "./Team.css";
+
+
+
 
 
 const styles = theme => ({
@@ -99,20 +107,7 @@ class Album extends React.Component {
       })
   }
 
-  //Take data to API layer to go to backend to be saved/loaded
-  view = (url, title, description, image) => {
-    var data =
-    {
-      url: url,
-      title: title,
-      description: description,
-      image: image
-    };
-    API.saveArticle(data).then(savedArticle =>{
-      console.log(savedArticle)
-    })
-    .catch()
-  }
+
 
 
   render() {
@@ -141,6 +136,26 @@ class Album extends React.Component {
               
             </div>
           </div>
+
+
+          <Wrapper>
+        <Title>Friends List</Title>
+        {this.state.friends.map(friend => (
+          <FriendCard
+            removeFriend={this.removeFriend}
+            id={friend.id}
+            key={friend.id}
+            name={friend.name}
+            image={friend.image}
+            occupation={friend.occupation}
+            location={friend.location}
+          />
+        ))}
+      </Wrapper>
+
+
+
+
           <div className={classNames(this.props.classes.layout, this.props.classes.cardGrid)}>
             {/* End hero unit */}
             <Grid container spacing={40}>

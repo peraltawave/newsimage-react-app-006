@@ -58,7 +58,7 @@ const styles = theme => ({
     flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: '100%', // 16:9
+    paddingTop: '100%', // originally 56.25% 16:9
   },
   cardContent: {
     flexGrow: 1,
@@ -84,7 +84,7 @@ class Album extends React.Component {
 
         var news = [];
 
-        for (var i = 0; i < 20; i++) {
+        for (var i = 0; i < 4; i++) {
           var obj = {
 
             image: res.data.articles[i].urlToImage,
@@ -123,16 +123,17 @@ class Album extends React.Component {
           <Toolbar>
             <CameraIcon className={this.props.classes.icon} />
             <Typography variant="h6" color="inherit" noWrap>
-              Welcome to newsImage
+              Meet the Team
           </Typography>
           </Toolbar>
         </AppBar>
+
         <main>
           {/* Hero unit */}
           <div className={this.props.classes.heroUnit}>
             <div className={this.props.classes.heroContent}>
               <Typography className="newsImage-logo" align="center"> 
-                newsImage  
+                newsImage Team  
             </Typography>
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
                 Below is a collection of current news articles represented only by it's associated image. You can choose to visit the news article or save it for later.
@@ -151,14 +152,14 @@ class Album extends React.Component {
                       image={card.image} // eslint-disable-line max-len
                       title={card.title}
                     />
-                    {/* <CardContent className={this.props.classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2"> */}
+                    <CardContent className={this.props.classes.cardContent}>
+                      <Typography gutterBottom variant="h5" component="h2">
                         {/*card.title*/}
-                      {/* </Typography>
-                      <Typography> */}
-                        {/* card.description */ } 
-                      {/* </Typography>
-                    </CardContent> */}
+                      </Typography>
+                      <Typography>
+                        {card.description} 
+                      </Typography>
+                    </CardContent>
                     <CardActions>
                       <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
                         
@@ -167,7 +168,7 @@ class Album extends React.Component {
                         {/* CURLY BOIZ
                         THIS IS THE FUNCTION TO CALL TO SAVE - BUT WE CALL IT */}
                     </Button>
-                      <Button  className="view-icon" size="small" color="primary" href={card.title} target="_blank">
+                      <Button size="small" color="primary" href={card.title} target="_blank">
                       <Visibility className={this.props.classes.icon} />
 
                     </Button>
@@ -182,11 +183,6 @@ class Album extends React.Component {
                  <Grid item>
                    <Button variant="contained" color="primary" href="/saved">
                      my saved articles
-                 </Button>
-                 </Grid>
-                 <Grid item>
-                   <Button variant="outlined" color="primary" href="/team">
-                     meet the team
                  </Button>
                  </Grid>
                </Grid>
