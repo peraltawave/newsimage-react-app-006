@@ -187,7 +187,7 @@ class Album extends React.Component {
                  </Grid>
                  <Grid item>
                  <Button variant="outlined" color="primary" href="/team">
-                     meet the team
+                     meet the team!
                  </Button>
                  </Grid>
                </Grid>
