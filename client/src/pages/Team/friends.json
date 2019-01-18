@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Alex",
+    "image": "https://files.slack.com/files-pri/TB2803CP7-FFGBDBESZ/alex.jpg",
+    "occupation": "I'm a Canadian and I'm very sorry about that eh.",
+    "location": "Canada"
+  },
+  {
+    "id": 1,
+    "name": "Derek",
+    "image": "https://files.slack.com/files-pri/TB2803CP7-FFGBDSVTP/derek.jpg",
+    "occupation": "I like hockey so much that I was made an honorary Canadian in a official ceremony.",
+    "location": "Minnesota"
+  },
+  {
+    "id": 1,
+    "name": "Keith",
+    "image": "https://files.slack.com/files-pri/TB2803CP7-FFH74QELX/keith.jpg",
+    "occupation": "My beard is the source of my power.",
+    "location": "Hollywood"
+  },
+  {
+    "id": 1,
+    "name": "Miguel",
+    "image": "https://files.slack.com/files-pri/TB2803CP7-FFG2EA38T/miguel.jpg",
+    "occupation": "I like long walks on the beach and doing your mom.",
+    "location": "Your mom's house"
+  }
+]

@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
+
 import "../Books/Books.css";
 import "../Detail/Detail.css";
+import Typography from '@material-ui/core/Typography';
 
 
 class Books extends Component {
@@ -68,7 +67,7 @@ class Books extends Component {
     return (
       <Container fluid>
         <Jumbotron>
-          <h1 className="newsImage-logo"> newsImage</h1>
+        <Typography className="newsImage-logo" align="center">newsImage</Typography>
         </Jumbotron>
         <Link to={"/books/"}>
                       Go

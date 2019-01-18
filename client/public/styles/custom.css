@@ -1,5 +1,5 @@
 .navbar-brand2{
-    color: #4400ff;
+    color: #3b5998;
     margin-right: 25px;
     font-weight: bold;
 
@@ -9,7 +9,7 @@
     }
 
 .newsImage-logo{
-    color: #4400ff;
+    color: #3b5998;
     font-weight: bold;
     font-style: italic;
     font-size: 50px;
@@ -17,7 +17,7 @@
 }
 
 .newsImage-footer{
-    color: #4400ff;
+    color: #3b5998;
     font-weight: bold;
     font-style: italic;
     font-size: 25px;
@@ -35,8 +35,15 @@
     float: right;
     margin-left: auto;
 }
+
 .Login {
-    margin-left:600px;
-    margin-right:600px;
-    margin-top: 50px;
+
+
+    margin: 50px auto 20px auto;
+
+    padding: 10px 10px 20px 10px;
+
+
+    width: 370px;
+
 }

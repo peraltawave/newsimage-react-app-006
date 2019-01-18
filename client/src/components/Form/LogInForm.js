@@ -1,6 +1,7 @@
 import React from 'react';
 import { Paper, withStyles, Grid, TextField, Button, FormControlLabel, Checkbox } from '@material-ui/core';
-import { Face, Fingerprint } from '@material-ui/icons'
+import { AccountBox, Lock } from '@material-ui/icons'
+
 // import { Link } from "react-router-dom";
 const styles = theme => ({
     margin: {
@@ -19,7 +20,7 @@ class LoginTab extends React.Component {
                 <div className={classes.margin}>
                     <Grid container spacing={8} alignItems="flex-end">
                         <Grid item>
-                            <Face />
+                            <AccountBox />
                         </Grid>
                         <Grid item md={true} sm={true} xs={true}>
                             <TextField id="username" label="Username" type="email"  autoFocus required />
@@ -27,7 +28,7 @@ class LoginTab extends React.Component {
                     </Grid>
                     <Grid container spacing={8} alignItems="flex-end">
                         <Grid item>
-                            <Fingerprint />
+                            <Lock />
                         </Grid>
                         <Grid item md={true} sm={true} xs={true}>
                             <TextField id="username" label="Password" type="password"  required />
@@ -46,12 +47,12 @@ class LoginTab extends React.Component {
                         </Grid>
                     </Grid>
                     <Grid container justify="center" style={{ marginTop: '10px' }}>
-                        <Button variant="outlined" color="primary" style={{ textTransform: "none" }}> Login</Button>
+                        <Button variant="outlined" color="primary" style={{ textTransform: "none" }} href="/album"> Login</Button>
+
                     </Grid>
                 </div>
             </Paper>
         );
     }
 }
-
 export default withStyles(styles)(LoginTab);

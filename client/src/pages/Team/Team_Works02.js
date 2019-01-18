@@ -1,12 +1,11 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
-import Save from '@material-ui/icons/Save';
+import { Save, PhotoCamera } from '@material-ui/icons';
 import Visibility from '@material-ui/icons/Visibility';
-
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -18,6 +17,15 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import API from '../../utils/API';
+
+import Title from "../../components/Title";
+import FriendCard from "../../components/FriendCard";
+import Wrapper from "../../components/Wrapper";
+import friends from "./friends.json";
+import "./Team.css";
+
+
+
 
 
 const styles = theme => ({
@@ -58,7 +66,7 @@ const styles = theme => ({
     flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: '100%', // 16:9
+    paddingTop: '100%', // originally 56.25% 16:9
   },
   cardContent: {
     flexGrow: 1,
@@ -72,10 +80,12 @@ const styles = theme => ({
 
 class Album extends React.Component {
   state = {
-    cards: []
+    cards: [],
+    friends
 
   };
 
+  
 
   componentDidMount() {
 
@@ -84,7 +94,7 @@ class Album extends React.Component {
 
         var news = [];
 
-        for (var i = 0; i < 20; i++) {
+        for (var i = 0; i < 4; i++) {
           var obj = {
 
             image: res.data.articles[i].urlToImage,
@@ -99,20 +109,7 @@ class Album extends React.Component {
       })
   }
 
-  //Take data to API layer to go to backend to be saved/loaded
-  view = (url, title, description, image) => {
-    var data =
-    {
-      url: url,
-      title: title,
-      description: description,
-      image: image
-    };
-    API.saveArticle(data).then(savedArticle =>{
-      console.log(savedArticle)
-    })
-    .catch()
-  }
+
 
 
   render() {
@@ -121,72 +118,54 @@ class Album extends React.Component {
         <CssBaseline />
         <AppBar position="static" className={this.props.classes.appBar}>
           <Toolbar>
-            <CameraIcon className={this.props.classes.icon} />
+            <PhotoCamera className={this.props.classes.icon} />
             <Typography variant="h6" color="inherit" noWrap>
-              Welcome to newsImage
+              Meet the Team
           </Typography>
           </Toolbar>
         </AppBar>
+
         <main>
           {/* Hero unit */}
           <div className={this.props.classes.heroUnit}>
             <div className={this.props.classes.heroContent}>
               <Typography className="newsImage-logo" align="center"> 
-                newsImage  
+                newsImage Team  
             </Typography>
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
-                Below is a collection of current news articles represented only by it's associated image. You can choose to visit the news article or save it for later.
+                The guys that brought you newsImage
             </Typography>
-              
+            {this.state.friends.map(friend => (
+          <FriendCard
+            removeFriend={this.removeFriend}
+            id={friend.id}
+            key={friend.id}
+            name={friend.name}
+            image={friend.image}
+            occupation={friend.occupation}
+            location={friend.location}
+          />
+        ))}
+
+
             </div>
           </div>
-          <div className={classNames(this.props.classes.layout, this.props.classes.cardGrid)}>
-            {/* End hero unit */}
-            <Grid container spacing={40}>
-              {this.state.cards.map(card => (
-                <Grid item key={card} sm={6} md={4} lg={3}>
-                  <Card className={this.props.classes.card}>
-                    <CardMedia
-                      className={this.props.classes.cardMedia}
-                      image={card.image} // eslint-disable-line max-len
-                      title={card.title}
-                    />
-                    {/* <CardContent className={this.props.classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2"> */}
-                        {/*card.title*/}
-                      {/* </Typography>
-                      <Typography> */}
-                        {/* card.description */ } 
-                      {/* </Typography>
-                    </CardContent> */}
-                    <CardActions>
-                      <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
-                        
-                        <Save className={this.props.classes.icon} />
 
-                        {/* CURLY BOIZ
-                        THIS IS THE FUNCTION TO CALL TO SAVE - BUT WE CALL IT */}
-                    </Button>
-                      <Button  className="view-icon" size="small" color="primary" href={card.title} target="_blank">
-                      <Visibility className={this.props.classes.icon} />
 
-                    </Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </div>
+
+
+
+
+
+
+
+
+
           <div className={this.props.classes.heroButtons}>
                <Grid container spacing={16} justify="center">
                  <Grid item>
                    <Button variant="contained" color="primary" href="/saved">
                      my saved articles
-                 </Button>
-                 </Grid>
-                 <Grid item>
-                   <Button variant="outlined" color="primary" href="/team">
-                     meet the team
                  </Button>
                  </Grid>
                </Grid>
