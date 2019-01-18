@@ -58,7 +58,7 @@ const styles = theme => ({
     flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '100%', // originally 56% 16:9
   },
   cardContent: {
     flexGrow: 1,
@@ -186,7 +186,7 @@ class Album extends React.Component {
                  </Button>
                  </Grid>
                  <Grid item>
-                   <Button variant="outlined" color="primary">
+                 <Button variant="outlined" color="primary" href="/team">
                      meet the team
                  </Button>
                  </Grid>
