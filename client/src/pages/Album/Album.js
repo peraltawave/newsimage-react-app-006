@@ -23,6 +23,7 @@ import API from '../../utils/API';
 const styles = theme => ({
   appBar: {
     position: 'relative',
+    background: '#3b5998',
   },
   icon: {
     marginRight: theme.spacing.unit * 2,
@@ -38,6 +39,8 @@ const styles = theme => ({
   heroButtons: {
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit *4,
+    background: '#3b5998',
+
   },
   layout: {
     width: 'auto',
