@@ -29,7 +29,7 @@ const Nav = () => (
       Saved
     </a>
 
-    <Button  style={apiButton} variant="contained" size="small" color="primary" href="http://localhost:3001/api/articles">
+    <Button  style={apiButton} variant="contained" size="small" color="primary" href="/api/articles">
       API&nbsp; <Settings fontSize="small" />
     </Button>
   </nav>
