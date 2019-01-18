@@ -18,7 +18,7 @@ import { withStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import API from '../../utils/API';
 
-
+import Title from "../../components/Title";
 import FriendCard from "../../components/FriendCard";
 import Wrapper from "../../components/Wrapper";
 import friends from "./friends.json";
@@ -141,7 +141,7 @@ class Album extends React.Component {
 
 
           <Wrapper>
-        <Title>Friends List</Title>
+          <Title>Friends List</Title>
         {this.state.friends.map(friend => (
           <FriendCard
             removeFriend={this.removeFriend}
