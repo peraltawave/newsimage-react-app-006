@@ -135,7 +135,14 @@ class Album extends React.Component {
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
                 The guys that brought you newsImage
             </Typography>
-            {this.state.friends.map(friend => (
+              
+            </div>
+          </div>
+
+
+          <Wrapper>
+          <Title>Friends List</Title>
+        {this.state.friends.map(friend => (
           <FriendCard
             removeFriend={this.removeFriend}
             id={friend.id}
@@ -146,21 +153,48 @@ class Album extends React.Component {
             location={friend.location}
           />
         ))}
+      </Wrapper>
 
 
-            </div>
+
+
+          <div className={classNames(this.props.classes.layout, this.props.classes.cardGrid)}>
+            {/* End hero unit */}
+            <Grid container spacing={40}>
+              {this.state.cards.map(card => (
+                <Grid item key={card} sm={6} md={4} lg={3}>
+                  <Card className={this.props.classes.card}>
+                    <CardMedia
+                      className={this.props.classes.cardMedia}
+                      image={card.image} // eslint-disable-line max-len
+                      title={card.title}
+                    />
+                    <CardContent className={this.props.classes.cardContent}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {/*card.title*/}
+                      </Typography>
+                      <Typography>
+                        {card.description} 
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
+                        
+                        <Save className={this.props.classes.icon} />
+
+                        {/* CURLY BOIZ
+                        THIS IS THE FUNCTION TO CALL TO SAVE - BUT WE CALL IT */}
+                    </Button>
+                      <Button size="small" color="primary" href={card.title} target="_blank">
+                      <Visibility className={this.props.classes.icon} />
+
+                    </Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
           </div>
-
-
-
-
-
-
-
-
-
-
-
           <div className={this.props.classes.heroButtons}>
                <Grid container spacing={16} justify="center">
                  <Grid item>
