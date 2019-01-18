@@ -6,7 +6,7 @@ import Album from "./pages/Album";
 import Home from "./pages/Home";
 import NoMatch from "./pages/NoMatch";
 import Saved from "./pages/Saved";
-import Team from "./pages/Team"
+import Team from "./pages/Team";
 
 
 import Nav from "./components/Nav";
