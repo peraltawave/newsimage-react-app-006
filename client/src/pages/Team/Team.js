@@ -58,7 +58,7 @@ const styles = theme => ({
     flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '100%', // 16:9
   },
   cardContent: {
     flexGrow: 1,
@@ -136,7 +136,7 @@ class Album extends React.Component {
                 newsImage Team  
             </Typography>
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
-                Below is a collection of current news articles represented only by it's associated image. You can choose to visit the news article or save it for later.
+                Here are the guys who brought this to you. 
             </Typography>
               
             </div>
@@ -154,44 +154,31 @@ class Album extends React.Component {
                     />
                     <CardContent className={this.props.classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
-                        {/*card.title*/}
+                        {card.title} 
                       </Typography>
                       <Typography>
-                        {/* card.description */ } 
+                        {card.description} 
                       </Typography>
                     </CardContent>
-                    <CardActions>
+                    {/* <CardActions>
                       <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
                         
-                        <Save className={this.props.classes.icon} />
+                        <Save className={this.props.classes.icon} /> */}
 
                         {/* CURLY BOIZ
                         THIS IS THE FUNCTION TO CALL TO SAVE - BUT WE CALL IT */}
-                    </Button>
-                      <Button size="small" color="primary" href={card.title} target="_blank">
+                    {/* </Button>
+                      <Button className="view-icon" size="small" color="primary" href={card.title} target="_blank">
                       <Visibility className={this.props.classes.icon} />
 
                     </Button>
-                    </CardActions>
+                    </CardActions> */}
                   </Card>
                 </Grid>
               ))}
             </Grid>
           </div>
-          <div className={this.props.classes.heroButtons}>
-               <Grid container spacing={16} justify="center">
-                 <Grid item>
-                   <Button variant="contained" color="primary" href="/saved">
-                     my saved articles
-                 </Button>
-                 </Grid>
-                 <Grid item>
-                   <Button variant="outlined" color="primary">
-                     meet the team
-                 </Button>
-                 </Grid>
-               </Grid>
-             </div>
+          
         </main>
 
         
