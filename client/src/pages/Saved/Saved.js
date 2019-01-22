@@ -26,64 +26,75 @@ import { List, ListItem } from "../../components/List";
 
 const styles = theme => ({
     appBar: {
-      position: 'relative',
-      background: '#3b5998',
+        position: 'relative',
+        background: '#3b5998',
 
     },
     icon: {
-      marginRight: theme.spacing.unit * 2,
+        marginRight: theme.spacing.unit * 2,
     },
     heroUnit: {
-      backgroundColor: theme.palette.background.paper,
+        backgroundColor: theme.palette.background.paper,
     },
     heroContent: {
-      maxWidth: 600,
-      margin: '0 auto',
-      padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
+        maxWidth: 600,
+        margin: '0 auto',
+        padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
     },
     heroButtons: {
-      marginTop: theme.spacing.unit * 2,
-      marginBottom: theme.spacing.unit *4,
-      background: '#3b5998',
+        marginTop: theme.spacing.unit * 2,
+        marginBottom: theme.spacing.unit * 4,
+        background: '#3b5998',
 
     },
     layout: {
-      width: 'auto',
-      marginLeft: theme.spacing.unit * 3,
-      marginRight: theme.spacing.unit * 3,
-      [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-        width: 1100,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-      },
+        width: 'auto',
+        marginLeft: theme.spacing.unit * 3,
+        marginRight: theme.spacing.unit * 3,
+        [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
+            width: 1100,
+            marginLeft: 'auto',
+            marginRight: 'auto',
+        },
     },
     cardGrid: {
-      padding: `${theme.spacing.unit * 2}px 0`,
+        padding: `${theme.spacing.unit * 2}px 0`,
     },
     card: {
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
     },
     cardMedia: {
-      paddingTop: '56.25%', // 16:9
+        paddingTop: '56.25%', // 16:9
     },
     cardContent: {
-      flexGrow: 1,
+        flexGrow: 1,
     },
     footer: {
-      backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing.unit * 6,
+        backgroundColor: theme.palette.background.paper,
+        padding: theme.spacing.unit * 6,
     },
 
-  
+
     bookThumb: {
         height: 'auto',
         width: '100px',
         margin: '10px',
         float: 'left',
-        marginTop: '-1px',
+        marginTop: '0px',
     },
+
+    articleDesc: {
+        fontSize: '-1',
+        color:'#666666',
+        fontFamily: 'arial',
+        fontSize: '.85em',
+        width: '85%',
+    },
+
+
+
 });
 
 
@@ -122,61 +133,28 @@ class Album extends React.Component {
             <React.Fragment>
                 <CssBaseline />
                 <AppBar position="static" className={this.props.classes.appBar}>
-          <Toolbar>
-            <CameraIcon className={this.props.classes.icon} />
-            <Typography variant="h6" color="inherit" noWrap>
-              Saved Articles
+                    <Toolbar>
+                        <CameraIcon className={this.props.classes.icon} />
+                        <Typography variant="h6" color="inherit" noWrap>
+                            Saved Articles
           </Typography>
-          </Toolbar>
-        </AppBar>
+                    </Toolbar>
+                </AppBar>
                 <main>
                     {/* Hero unit */}
                     <div className={this.props.classes.heroUnit}>
-                    
-                            {/* this below is the main text header */}
-                            <div className={this.props.classes.heroContent}>
+
+                        {/* this below is the main text header */}
+                        <div className={this.props.classes.heroContent}>
                             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                                 Saved Articles
                             </Typography>
-                            
-                            </div>
+
+                        </div>
                     </div>
                     {/* End hero unit */}
 
                     {/* this below is the default grid that is used only on the album page */}
-                    <div className={classNames(this.props.classes.layout, this.props.classes.cardGrid)}>
-
-                        <Grid container spacing={40}>
-                            {this.state.cards.map(card => (
-                                <Grid item key={card} sm={6} md={4} lg={3}>
-                                    <Card className={this.props.classes.card}>
-                                        <CardMedia
-                                            className={this.props.classes.cardMedia}
-                                            image={card.image} // eslint-disable-line max-len
-                                            title={card.title}
-                                        />
-                                        <CardContent className={this.props.classes.cardMedia}>
-                                            <Typography gutterBottom variant="h5" component="h2">
-                                                {card.title}
-                                            </Typography>
-                                            <Typography>
-                                                {card.description}
-                                            </Typography>
-                                        </CardContent>
-                                        <CardActions>
-                                            {/* onclick FUNCTION that saves an article to the /saved route */}
-                                            <Button onClick={() => this.view(card.url, card.title, card.description, card.image)} size="small" color="primary">
-                                                Save
-                                            </Button>
-                                            <Button size="small" color="primary">
-                                                Edit
-                                            </Button>
-                                        </CardActions>
-                                    </Card>
-                                </Grid>
-                            ))}
-                        </Grid>
-                    </div>
                 </main>
 
                 <div>
@@ -184,35 +162,38 @@ class Album extends React.Component {
                         <List>
                             {this.state.articles.map(article => (
                                 <ListItem key={article._id}>
-                                <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
-                                    <Link to={article.url}>
-                                        {/* this below is the display of the image and description */}
-                                            <img src={article.image} className={this.props.classes.bookThumb} /> {article.description}
-                                            {/* {article.description}{article.url} */}
-                                    </Link>
-                                        {/* this below is the display of the trash can delete icon - which is set in the DeleteBtn component*/}
-                                        
+                                    <img src={article.image} className={this.props.classes.bookThumb} />
+                                    <div className={this.props.classes.articleDesc}>{article.description}</div>
+                                    <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
+
+                                    {/* this below is the display of the image and description */}
+                                    {/* <img src={article.image} className={this.props.classes.bookThumb} />\ {article.description} */}
+                                    {/* {article.description}{article.url} */}
+
+                                    {/* <Link to={article.url}>hello</Link> */}
+                                    {/* this below is the display of the trash can delete icon - which is set in the DeleteBtn component*/}
+
                                 </ListItem>
                             ))}
                         </List>
                     ) : (
-                                        /* this below is the else statement - what to show if we have saved no articles */
-                                        <h3>No Results to Display</h3>
+                            /* this below is the else statement - what to show if we have saved no articles */
+                            <h3>No Results to Display</h3>
                         )}
                     <div className={this.props.classes.heroButtons}>
-                                <Grid container spacing={16} justify="center">
-                                     <Grid item>
-                                        <Button variant="contained" color="primary" href="/album">
-                                        <KeyboardBackspace fontSize="small" /> back to articles
+                        <Grid container spacing={16} justify="center">
+                            <Grid item>
+                                <Button variant="contained" color="primary" href="/album">
+                                    <KeyboardBackspace fontSize="small" /> back to articles
                                         </Button>
-                                    </Grid>
-                                    {/* <Grid item>
+                            </Grid>
+                            {/* <Grid item>
                                         <Button variant="outlined" color="primary">
                                             Secondary action
                                         </Button>
                                     </Grid>  */}
-                                </Grid>
-                            </div>
+                        </Grid>
+                    </div>
                 </div>
 
                 {/* Footer */}

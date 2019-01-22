@@ -24,9 +24,13 @@ const Nav = () => (
     <a className="navbar-brand" href="/">
      Home
     </a> 
-    <a className="navbar-brand" href="/album">
+    {/* <a className="navbar-brand" href="/album">
+      Articles
+    </a> */}
+    <a className="navbar-brand" href="/article">
       Articles
     </a>
+
     <a className="navbar-brand" href="/saved">
       Saved
     </a>

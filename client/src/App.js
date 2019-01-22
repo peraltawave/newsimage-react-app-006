@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import NoMatch from "./pages/NoMatch";
 import Saved from "./pages/Saved";
 import Team from "./pages/Team";
+import Article from "./pages/Article";
 import LogInTab from "./components/Form/LogInForm";
 
 
@@ -23,6 +24,7 @@ const App = () => (
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
         <Route exact path="/album" component={Album} />
+        <Route exact path="/article" component={Article} />
         <Route exact path="/saved" component={Saved} />
         <Route exact path="/team" component={Team} />
 
