@@ -1,0 +1,49 @@
+.navbar-brand2{
+    color: #3b5998;
+    margin-right: 25px;
+    font-weight: bold;
+
+    font-size: 24px;
+    font-style: italic;
+    letter-spacing: -1px;
+    }
+
+.newsImage-logo{
+    color: #3b5998;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 50px;
+    letter-spacing: -2px;
+}
+
+.newsImage-footer{
+    color: #3b5998;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 25px;
+    letter-spacing: -2px;
+}
+
+.tagLine-footer{
+    color: #a3a2a7;
+    font-size: 12px;
+    
+}
+
+.view-icon{
+  
+    float: right;
+    margin-left: auto;
+}
+
+.Login {
+
+
+    margin: 50px auto 20px auto;
+
+    padding: 10px 10px 20px 10px;
+
+
+    width: 370px;
+
+}
