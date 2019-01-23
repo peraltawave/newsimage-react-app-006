@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
-import Detail from "./pages/Detail";
+
+
 import Album from "./pages/Album";
 import Home from "./pages/Home";
 import NoMatch from "./pages/NoMatch";
@@ -20,9 +20,7 @@ const App = () => (
       <Nav />
       <Switch>
 
-        <Route exact path="/" component={LogInTab}/>
-        <Route exact path="/books" component={Books} />
-        <Route exact path="/books/:id" component={Detail} />
+        <Route exact path="/" component={LogInTab}/>        
         <Route exact path="/album" component={Album} />
         <Route exact path="/article" component={Article} />
         <Route exact path="/saved" component={Saved} />

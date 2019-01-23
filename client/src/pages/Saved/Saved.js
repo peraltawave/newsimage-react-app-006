@@ -77,7 +77,7 @@ const styles = theme => ({
     },
 
 
-    bookThumb: {
+    articleThumb: {
         height: 'auto',
         width: '100px',
         margin: '10px',
@@ -162,12 +162,12 @@ class Album extends React.Component {
                         <List>
                             {this.state.articles.map(article => (
                                 <ListItem key={article._id}>
-                                    <img src={article.image} className={this.props.classes.bookThumb} />
-                                    <div className={this.props.classes.articleDesc}>{article.description}</div>
+                                    <img src={article.image} className={this.props.classes.articleThumb} />
+                                    <div className={this.props.classes.articleDesc}><a href= {article.url} target= "_blank"> {article.description}</a></div>
                                     <DeleteBtn onClick={() => this.deleteArticle(article._id)} />
 
                                     {/* this below is the display of the image and description */}
-                                    {/* <img src={article.image} className={this.props.classes.bookThumb} />\ {article.description} */}
+                                    {/* <img src={article.image} className={this.props.classes.articleThumb} />\ {article.description} */}
                                     {/* {article.description}{article.url} */}
 
                                     {/* <Link to={article.url}>hello</Link> */}
