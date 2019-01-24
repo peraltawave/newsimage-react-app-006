@@ -44,7 +44,6 @@ const styles = theme => ({
     heroButtons: {
         marginTop: theme.spacing.unit * 2,
         marginBottom: theme.spacing.unit * 4,
-        background: '#3b5998',
 
     },
     layout: {
@@ -177,18 +176,13 @@ class Album extends React.Component {
                             ))}
                         </List>
                     ) : (
-<<<<<<< HEAD
                                         /* this below is the else statement - what to show if we have saved no articles */
                                         <h3>No Articles to Display</h3>
-=======
-                            /* this below is the else statement - what to show if we have saved no articles */
-                            <h3>No Results to Display</h3>
->>>>>>> 827db2587f0adf6a2094efa3f5175129dd39c065
                         )}
                     <div className={this.props.classes.heroButtons}>
                         <Grid container spacing={16} justify="center">
                             <Grid item>
-                                <Button variant="contained" color="primary" href="/album">
+                                <Button variant="contained" color="primary" href="/article">
                                     <KeyboardBackspace fontSize="small" /> back to articles
                                         </Button>
                             </Grid>
