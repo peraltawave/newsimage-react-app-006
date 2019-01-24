@@ -39,7 +39,6 @@ const styles = theme => ({
   heroButtons: {
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit *4,
-    background: '#3b5998',
 
   },
   layout: {
