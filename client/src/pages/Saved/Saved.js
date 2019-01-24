@@ -197,7 +197,7 @@ class Album extends React.Component {
                         </List>
                     ) : (
                                         /* this below is the else statement - what to show if we have saved no articles */
-                                        <h3>No Results to Display</h3>
+                                        <h3>No Articles to Display</h3>
                         )}
                     <div className={this.props.classes.heroButtons}>
                                 <Grid container spacing={16} justify="center">

@@ -5,8 +5,8 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "next",
+    "react-dom": "next",
     "react-scripts": "1.0.14",
     "react-router-dom": "^4.1.2",
     "axios": "^0.16.2"

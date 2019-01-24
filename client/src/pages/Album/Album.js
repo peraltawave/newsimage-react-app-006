@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Save from '@material-ui/icons/Save';
 import Visibility from '@material-ui/icons/Visibility';
-
+import MenuListComposition from "../../components/MenuListComposition/MenuListComposition"
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -129,6 +129,7 @@ class Album extends React.Component {
               Welcome to newsImage
           </Typography>
           </Toolbar>
+       
         </AppBar>
         <main>
           {/* Hero unit */}
@@ -140,6 +141,7 @@ class Album extends React.Component {
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
                 Below is a collection of current news articles represented only by it's associated image. You can choose to visit the news article or save it for later.
             </Typography>
+            <MenuListComposition/>
               
             </div>
           </div>
