@@ -47,7 +47,7 @@ class LoginTab extends React.Component {
                         </Grid>
                     </Grid>
                     <Grid container justify="center" style={{ marginTop: '10px' }}>
-                        <Button variant="outlined" color="primary" style={{ textTransform: "none" }} href="/album"> Login</Button>
+                        <Button variant="outlined" color="primary" style={{ textTransform: "none" }} href="/article"> Login</Button>
 
                     </Grid>
                 </div>
