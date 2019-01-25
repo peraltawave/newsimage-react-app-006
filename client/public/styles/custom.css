@@ -47,3 +47,17 @@
     width: 370px;
 
 }
+
+.menuButton {
+    float:right;
+    color: white;
+    margin-left: auto;
+}
+
+.menuButtonContainer {
+  
+    position: absolute;
+  right: 0px;
+  
+  padding: 10px;
+}

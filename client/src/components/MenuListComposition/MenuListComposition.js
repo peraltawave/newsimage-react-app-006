@@ -16,6 +16,7 @@ const useStyles = makeStyles(theme => ({
   paper: {
    marginRight:  2,
   },
+  
 }));
 
 function MenuListComposition() {
@@ -36,6 +37,7 @@ function MenuListComposition() {
   }
 
   return (
+    <div className={"menuButtonContainer"} >
     <div className={classes.root}>
       {/* <Paper className={classes.paper}>
         <MenuList>
@@ -48,12 +50,15 @@ function MenuListComposition() {
           <MenuItem>Opinion</MenuItem>
         </MenuList>
       </Paper> */}
-      <div>
+      
         <Button
+          color={"default"}
           buttonRef={anchorEl}
           aria-owns={open ? 'menu-list-grow' : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
+          className={"menuButton"}
+          
         >
           Select Article Type
         </Button>
