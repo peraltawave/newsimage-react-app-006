@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
-import Album from "./pages/Album";
+
 import Home from "./pages/Home";
 import NoMatch from "./pages/NoMatch";
 import Saved from "./pages/Saved";
@@ -20,8 +20,7 @@ const App = () => (
       <Nav />
       <Switch>
 
-        <Route exact path="/" component={LogInTab}/>        
-        <Route exact path="/album" component={Album} />
+        <Route exact path="/" component={LogInTab} />
         <Route exact path="/article" component={Article} />
         <Route exact path="/saved" component={Saved} />
         <Route exact path="/team" component={Team} />

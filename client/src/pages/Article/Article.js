@@ -127,6 +127,7 @@ class Article extends React.Component {
             <Typography variant="h6" color="inherit" noWrap>
               Welcome to newsImage
           </Typography>
+          <MenuListComposition/>
           </Toolbar>
        
         </AppBar>
@@ -137,10 +138,11 @@ class Article extends React.Component {
               <Typography className="newsImage-logo" align="center"> 
                 newsImage  
             </Typography>
+
               <Typography variant="h6" align="center" color="textSecondary" paragraph>
                 Below is a collection of current news articles represented only by it's associated image. You can choose to visit the news article or save it for later.
             </Typography>
-            <MenuListComposition/>
+           
               
             </div>
           </div>

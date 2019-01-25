@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import KeyboardBackspace from '@material-ui/icons/KeyboardBackspace';
-
+import MenuListComposition from "../../components/MenuListComposition/MenuListComposition"
 
 
 import Card from '@material-ui/core/Card';
@@ -137,6 +137,7 @@ class Album extends React.Component {
                         <Typography variant="h6" color="inherit" noWrap>
                             Saved Articles
           </Typography>
+          <MenuListComposition/>
                     </Toolbar>
                 </AppBar>
                 <main>
