@@ -125,7 +125,7 @@ class Article extends React.Component {
           <Toolbar>
             <CameraIcon className={this.props.classes.icon} />
             <Typography variant="h6" color="inherit" noWrap>
-              Welcome to newsImage
+              Welcome to newsImage, Derek
           </Typography>
           <MenuListComposition/>
           </Toolbar>

@@ -135,7 +135,7 @@ class Album extends React.Component {
                     <Toolbar>
                         <CameraIcon className={this.props.classes.icon} />
                         <Typography variant="h6" color="inherit" noWrap>
-                            Saved Articles
+                            Derek's Saved Articles
           </Typography>
           <MenuListComposition/>
                     </Toolbar>
