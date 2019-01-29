@@ -69,3 +69,13 @@ body {
     background-size: auto;
 
 }
+
+.jumbotron {
+    border-radius: 0rem;
+    margin: 0;
+    width: 100%;
+ }
+ .container-fluid{
+    padding-right: 0px;
+    padding-left: 0px;
+ }
