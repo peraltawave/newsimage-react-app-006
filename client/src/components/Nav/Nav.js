@@ -37,9 +37,7 @@ const Nav = () => (
     <a className="navbar-brand" href="/team">
     Team</a>
 
-    <Button  style={apiButton} variant="contained" size="small" color="primary" href=":27944/api/articles" target="_blank">
-      API&nbsp; <Settings fontSize="small" />
-    </Button>
+    
   </nav>
 );
 
